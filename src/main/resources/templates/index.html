@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<h2>Product Form</h2>
+	<h2>Product Form</h2>
 
 	<p th:text=${msg} />
 
@@ -16,14 +16,17 @@
 			<tr>
 				<td>Product ID</td>
 				<td><input type="text" th:field="*{pid}" /></td>
+				<td th:if="${#fields.hasErrors('pid')}" th:errors="*{pid}"></td>
 			</tr>
 			<tr>
 				<td>Product Name</td>
 				<td><input type="text" th:field="*{pname}" /></td>
+				<td th:if="${#fields.hasErrors('pname')}" th:errors="*{pname}"></td>
 			</tr>
 			<tr>
 				<td>Product Price</td>
 				<td><input type="text" th:field="*{price}" /></td>
+				<td th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></td>
 			</tr>
 			<tr>
 				<td></td>

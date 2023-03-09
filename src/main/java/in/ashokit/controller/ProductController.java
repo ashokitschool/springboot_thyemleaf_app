@@ -1,7 +1,10 @@
 package in.ashokit.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -19,15 +22,17 @@ public class ProductController {
 	}
 
 	// method to handle form submission
-	
+
 	@PostMapping("/product")
-	public String handleSubmitBtn(Product p, Model model) {
-		
+	public String handleSubmitBtn(@Valid Product p, BindingResult result, Model model) {
+
 		System.out.println(p);
 
-		model.addAttribute("msg", "Product Saved");
-		
+		if (result.hasErrors()) {
+			return "index";
+		} else {
+			model.addAttribute("msg", "Product Saved");
+		}
 		return "index";
 	}
-
 }
