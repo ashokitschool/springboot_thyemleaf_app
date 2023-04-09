@@ -30,8 +30,5 @@ spec:
   ports:
     - port: 80
       targetPort: 8080
-<<<<<<< HEAD
 ...
-=======
-...
->>>>>>> 5a315d8e370976ba8f7940d3c721e1db10ef9b86
+
