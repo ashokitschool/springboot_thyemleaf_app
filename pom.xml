@@ -12,7 +12,7 @@
 	<groupId>in.ashokit</groupId>
 	<artifactId>Boot_Thymleaf_App</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>18_WebMVC_Thymleaf_App</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
