@@ -8,7 +8,7 @@ public class Product {
 	private Integer pid;
 
 	@NotNull(message = "Name is required")
-	@Size(min = 3, max = 8, message = "Name should have min 3 max 8 characters")
+	@Size(min = 3, max = 15, message = "Name should have min 3 max 15 characters")
 	private String pname;
 
 	@NotNull(message = "Price is required")
