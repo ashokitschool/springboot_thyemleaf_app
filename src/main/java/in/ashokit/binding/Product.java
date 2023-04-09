@@ -5,15 +5,17 @@ import javax.validation.constraints.Size;
 
 public class Product {
 
-	@NotNull(message = "Id is required")
 	private Integer pid;
 
 	@NotNull(message = "Name is required")
-	@Size(min = 3, max = 8)
+	@Size(min = 3, max = 8, message = "Name should have min 3 max 8 characters")
 	private String pname;
 
 	@NotNull(message = "Price is required")
 	private Double price;
+
+	@NotNull(message = "Quantity is required")
+	private Integer qty;
 
 	public Integer getPid() {
 		return pid;
@@ -39,9 +41,12 @@ public class Product {
 		this.price = price;
 	}
 
-	@Override
-	public String toString() {
-		return "Product [pid=" + pid + ", pname=" + pname + ", price=" + price + "]";
+	public Integer getQty() {
+		return qty;
+	}
+
+	public void setQty(Integer qty) {
+		this.qty = qty;
 	}
 
 }
