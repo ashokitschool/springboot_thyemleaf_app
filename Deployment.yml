@@ -4,19 +4,29 @@ kind: Namespace
 metadata:
    name: ashokitns
 ---
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: springbootapppod
-  labels:
-    app: sbapp #very imp
-  namespace: ashokitns
+  name: springbootdeployment
 spec:
-  containers:
-  - name: springbootappcontainer
-    image: ashokit/sb-logger-app
-    ports:
-      - containerPort: 8080
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: sb-web-app
+  template:
+    metadata:
+      name: springbootwebapppod
+      labels:
+        app: sb-web-app
+     spec:
+      containers:
+        - name: sbappcontainer
+          image: ashokit/sb-logger-app
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
 ---
 apiVersion: v1
 kind: Service
