@@ -14,12 +14,12 @@ spec:
     type: RollingUpdate
   selector:
     matchLabels:
-      app: sb-web-app
+      app: sbwebapp
   template:
     metadata:
       name: springbootwebapppod
       labels:
-        app: sb-web-app
+        app: sbwebapp
      spec:
       containers:
         - name: sbappcontainer
@@ -31,7 +31,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: javawebappsvc
+  name: sbappsvc
   namespace: ashokitns
 spec:
   type: LoadBalancer
