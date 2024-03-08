@@ -56,7 +56,7 @@ public class ProductController {
 		return "index";
 	}
 	
-	@GetMapping("/product")
+	@DeleteMapping("/product")
 	public String delete(@RequestParam("pid") Integer pid, Model model) {
 		map.remove(pid);
 		model.addAttribute("msg", "Product Deleted");
